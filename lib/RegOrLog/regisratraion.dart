@@ -5,6 +5,12 @@ import 'login.dart';
 class RegistrationPage extends StatelessWidget {
   const RegistrationPage({super.key});
 
+  MySnacbar(msg, context){
+    return ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(msg)),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -101,6 +107,7 @@ class RegistrationPage extends StatelessWidget {
               height: 50,
               width: double.infinity,
               child: ElevatedButton(onPressed: (){
+                MySnacbar("Registration Successfully", context);
                 Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage(),));
               }, child: Text('Registration'), style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.teal),

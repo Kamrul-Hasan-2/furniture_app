@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'homeDisplay/Card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,6 +7,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body:SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -41,20 +41,42 @@ class HomePage extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                OutlinedButton(onPressed: (){}, child: Text("All"),style: ButtonStyle(
+                OutlinedButton(onPressed: (){},style: ButtonStyle(
                   foregroundColor: MaterialStateProperty.all(Colors.white),
                   backgroundColor: MaterialStateProperty.all(Colors.teal)
-                ),),
-                OutlinedButton(onPressed: (){}, child: Text("Chair")),
-                OutlinedButton(onPressed: (){}, child: Text("Table")),
-                OutlinedButton(onPressed: (){}, child: Text("Sofa")),
-                OutlinedButton(onPressed: (){}, child: Text("Door"))
+                ), child: const Text("All"),),
+                OutlinedButton(onPressed: (){}, child: const Text("Chair")),
+                OutlinedButton(onPressed: (){}, child: const Text("Table")),
+                OutlinedButton(onPressed: (){}, child: const Text("Sofa")),
+                OutlinedButton(onPressed: (){}, child: const Text("Door"))
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                  child: Text("Furniture", style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold
+                  ),),
+
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(0, 0, 20, 0),
+                  child: Text("See All", style: TextStyle(
+                    fontSize: 17
+                  ),),
+                )
               ],
             )
           ],
